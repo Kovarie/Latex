@@ -1,0 +1,96 @@
+\documentclass  [12pt]{article}
+\usepackage{graphicx}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+
+\author {WIKIPEDIA} 
+\date{2021.10.16.}
+\title{Minimax elv }
+
+\begin{document}
+
+	\begin{titlepage}
+    		\maketitle
+	\end{titlepage}
+
+
+
+A minimax elv a döntéselméletben, a játékelméletben és a statisztikában alkalmazott döntési szabály, ami szerint azt a lehetőséget kell választani, ami minimalizálja a maximális veszteséget. Felfogható a minimális nyereség maximalizálásaként is.
+
+Az elmélet megalkotása a kétfős zéróösszegű játékokkal kezdődött, ami magába foglalta a két játékos szimultán döntéseit és a felváltva tett lépéseit is, aztán bonyolultabb esetekre is kiterjesztették.
+
+A játékelméletben
+A minimax elv egy kevert stratégia, ami része a zéró összegű játékok megoldásának. A zéró összegű játékokban a minimax elv megadja a nyeregpontot.
+
+Definíció: Legyen A és B nem üres halmaz,   adott függvény. Az   pont nyeregpont, ha minden  -ra és minden  -re  
+Neumann-tétel: Minden olyan kétszemélyes, zéró összegű játéknak van nyeregpontja, amiben véges sok elemi stratégia van. Azaz a legjobb kevert stratégiával az első játékos várható nyereségének maximuma egyenlő a második játékos várható veszteségének minimumával.
+
+Neumann János[1] szerint nem érdemes játékelméletet csinálni a minimax tételnek is nevezett tétel nélkül.[2]
+
+A tétel általánosításai Sion minimaxtétele és Parthasarathy tétele.
+
+Neumann-tétel
+Definíció: Egy vektor tetején a vektor legnagyobb koordinátáját értjük; a vektor alja a legkisebb koordinátája.
+
+Neumann-tétel: Minden olyan kétszemélyes, zéró összegű játéknak van nyeregpontja, amiben véges sok elemi stratégia van. Azaz a legjobb kevert stratégiával az első játékos várható nyereségének maximuma egyenlő a második játékos várható veszteségének minimumával.
+
+A tétel egy másik alakban: Jelölje A a játék kifizetési mátrixát. Az A oszlopai által feszített politópban levő elemek minimuma egyenlő az A sorai által feszített politópban levő elemek aljának minimumával.
+
+Bizonyítás: a dualitástétel segítségével.
+
+
+%Példa
+%\includegraphics[height=4cm]{fa.png}
+
+
+\begin{figure}
+
+	\centering
+		\includegraphics[width=0.5\textwidth]{fa.png}
+	\caption{Példa}
+ 
+	\label{ref:Példa}
+
+\end{figure}
+
+\pagebreak
+
+
+Maximin
+
+Sokszor előfordul a játékelméletben, hogy a maximin különbözik a minimaxtól. A zéró összegű játékok elméletében a minimax az ellenfél nyereségének minimalizálását jelöli, ami a zéró összegű játékok esetén a saját veszteség minimalizálásának, azaz a saját nyereség maximalizálásának felel meg.
+A maximin a nem zéró összegű játékok esetén használatos stratégiát jelenti, ami maximalizálja a saját nyereséget. Ez általában nem egyezik az ellenfél nyereségének a minimumával, vagy a nyeregponti stratégiával.
+
+
+\begin{table}[b]
+
+	\centering
+	\begin{tabular}{ | l | c | c | r |}
+   	\hline
+       x  & B1 &  B2 & B3 \\ \hline
+    A1  & +3  &  -2 &  +2 \\ \hline
+    A2  & -1  &    0 &  +4 \\ \hline
+    A3  & -4  &   -3 &  +1 \\
+
+	\hline
+
+	\end{tabular}
+	\caption{}
+
+
+\end{table} 
+
+
+
+
+
+Példa
+
+A következő példa egy zéró összegű játék. A két játékos, A és B szimultán lép.
+Tegyük fel, hogy a játék kifizetési mátrixa az A játékos számára a fenti mátrix, és a B játékos számára az előjelek fordítottak. Ekkor A minimax választása A2, mivel itt a legrosszabb esetben 1-et kell fizetni, és B minimax választása B2, mert ekkor a legrosszabb esetben nincs nyeremény.
+Ez a megoldás nem stabil. Ha B azt hiszi, hogy A A2-t választja, akkor B1 mellett dönt. Ha A azt hiszi, hogy B B1 mellett dönt, akkor megjátssza A1-et. Ha B azt hiszi, hogy A A1-et játssza meg, akkor B2-t választja. A determinisztikus stratégia kiismerhető, ezért csak nem determinisztikus stratégia lehet stabil.
+A stabil kevert stratégiák: A 1/6 valószínűséggel választja A1-et, és 5/6 valószínűséggel A2-t. B 1/3 valószínűséggel választja B1-et, és 2/3 valószínűséggel B2-t. Ezek a stratégiák stabilak, és nem javíthatók.
+
+
+
+\end{document}
